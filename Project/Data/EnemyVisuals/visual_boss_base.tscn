@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://duue4e7wegw2l"]
+
+[ext_resource type="Texture2D" uid="uid://bumhx2tx4juht" path="res://icon.svg" id="1_hw45v"]
+
+[node name="visual_enemy_base" type="Node2D"]
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(0, -200)
+scale = Vector2(1.71875, 3.09375)
+texture = ExtResource("1_hw45v")

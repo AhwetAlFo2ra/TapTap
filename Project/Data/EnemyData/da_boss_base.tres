@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="data_enemy" load_steps=3 format=3 uid="uid://dg1uhi28cdivp"]
+
+[ext_resource type="PackedScene" uid="uid://duue4e7wegw2l" path="res://Data/EnemyVisuals/visual_boss_base.tscn" id="1_4n72u"]
+[ext_resource type="Script" path="res://Data/Scripts/data_enemy.gd" id="2_vf32n"]
+
+[resource]
+script = ExtResource("2_vf32n")
+display_name = "Basic Boss"
+enemy_visual = ExtResource("1_4n72u")

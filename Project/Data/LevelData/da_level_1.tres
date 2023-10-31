@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="data_level" load_steps=4 format=3 uid="uid://h70ss64xounk"]
+
+[ext_resource type="Resource" uid="uid://dg1uhi28cdivp" path="res://Data/EnemyData/da_boss_base.tres" id="1_ffa2n"]
+[ext_resource type="Resource" uid="uid://hpgh470v6ur5" path="res://Data/EnemyData/da_enemy_base.tres" id="1_lihjv"]
+[ext_resource type="Script" path="res://Data/Scripts/data_level.gd" id="2_5rdmr"]
+
+[resource]
+script = ExtResource("2_5rdmr")
+display_name = "Level 1 Test"
+enemy_weak = Array[Resource("res://Data/Scripts/data_enemy.gd")]([ExtResource("1_lihjv")])
+enemy_boss = ExtResource("1_ffa2n")
+enemy_weak_minHP = 150.0
+enemy_weak_maxHP = 500.0
+enemy_boss_minHP = 3000.0
+enemy_boss_maxHP = 3500.0
