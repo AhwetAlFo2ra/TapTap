@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://GameTest/testInput.gd" id="1_ryiiv"]
 [ext_resource type="Resource" uid="uid://h70ss64xounk" path="res://Data/LevelData/da_level_1.tres" id="2_yf2ml"]
-[ext_resource type="PackedScene" uid="uid://crxemnn2nc50h" path="res://Data/PlayerVisuals/player.tscn" id="3_fehom"]
+[ext_resource type="PackedScene" uid="uid://crxemnn2nc50h" path="res://Visuals/PlayerVisuals/player.tscn" id="3_fehom"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryiiv")
@@ -16,6 +16,7 @@ offset_bottom = 1022.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 color = Color(0.356863, 0.545098, 0.537255, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="GameClick" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -30,14 +31,38 @@ position = Vector2(144, 512)
 position = Vector2(446, 469)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 55.0
-offset_top = 210.0
-offset_right = 521.0
-offset_bottom = 237.0
+offset_left = 95.0
+offset_top = 76.0
+offset_right = 481.0
+offset_bottom = 103.0
 mouse_filter = 2
 max_value = 1.0
 value = 0.63
 show_percentage = false
+
+[node name="Label_EnemyName" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 150.0
+grow_vertical = 2
+text = "Test Enemy Name"
+vertical_alignment = 1
+
+[node name="Label_EnemyHP" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_right = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "1000 HP"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -48,15 +73,17 @@ one_shot = true
 offset_left = 446.0
 offset_right = 576.0
 offset_bottom = 76.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
 text = "1 / 8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="UI"]
 offset_left = 144.0
-offset_top = 23.0
+offset_top = 712.0
 offset_right = 432.0
-offset_bottom = 131.0
+offset_bottom = 820.0
 text = "Test Button Ignore Screen Click"
 
 [connection signal="gui_input" from="GameClick" to="." method="_on_game_gui_input"]

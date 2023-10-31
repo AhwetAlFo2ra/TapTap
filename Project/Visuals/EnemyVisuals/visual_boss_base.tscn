@@ -5,6 +5,6 @@
 [node name="visual_enemy_base" type="Node2D"]
 
 [node name="Enemy" type="Sprite2D" parent="."]
-position = Vector2(0, -200)
-scale = Vector2(1.71875, 3.09375)
+position = Vector2(0, -128)
+scale = Vector2(1.0625, 1.96875)
 texture = ExtResource("1_hw45v")
