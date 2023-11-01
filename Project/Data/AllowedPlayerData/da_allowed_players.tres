@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="data_allowed_players" load_steps=4 format=3 uid="uid://3cu0ixt8m8l1"]
+
+[ext_resource type="Script" path="res://Data/Scripts/data_allowed_players.gd" id="1_aqege"]
+[ext_resource type="Resource" uid="uid://23hghugyxhyp" path="res://Data/PlayerData/da_player_rock.tres" id="1_i56yo"]
+[ext_resource type="Resource" uid="uid://lqmbse7p5x7c" path="res://Data/PlayerData/da_player_gun.tres" id="2_f010u"]
+
+[resource]
+script = ExtResource("1_aqege")
+players = Array[Resource("res://Data/Scripts/data_player.gd")]([ExtResource("1_i56yo"), ExtResource("2_f010u")])
+current_index = 0

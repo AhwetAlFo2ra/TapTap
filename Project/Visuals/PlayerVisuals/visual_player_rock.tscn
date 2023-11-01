@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cei5y8n3tqtvi"]
+
+[ext_resource type="Texture2D" uid="uid://bumhx2tx4juht" path="res://icon.svg" id="1_8qn17"]
+
+[node name="visual_player_rock" type="Node2D"]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8qn17")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(-47, -58)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8qn17")

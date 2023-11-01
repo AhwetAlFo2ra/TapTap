@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" path="res://GameTest/testInput.gd" id="1_ryiiv"]
 [ext_resource type="Resource" uid="uid://h70ss64xounk" path="res://Data/LevelData/da_level_1.tres" id="2_yf2ml"]
-[ext_resource type="PackedScene" uid="uid://crxemnn2nc50h" path="res://Visuals/PlayerVisuals/player.tscn" id="3_fehom"]
+[ext_resource type="Resource" uid="uid://3cu0ixt8m8l1" path="res://Data/AllowedPlayerData/da_allowed_players.tres" id="3_lq8nj"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryiiv")
-leve_data = ExtResource("2_yf2ml")
+level_data = ExtResource("2_yf2ml")
+allowed_players_data = ExtResource("3_lq8nj")
 metadata/_edit_vertical_guides_ = [288.0]
 metadata/_edit_horizontal_guides_ = [512.0]
 
@@ -27,8 +28,8 @@ offset_bottom = 1022.0
 [node name="EnemyParent" type="Node2D" parent="."]
 position = Vector2(144, 512)
 
-[node name="Player" parent="." instance=ExtResource("3_fehom")]
-position = Vector2(446, 469)
+[node name="PlayerParent" type="Node2D" parent="."]
+position = Vector2(403, 512)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 95.0
@@ -79,13 +80,21 @@ text = "1 / 8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="UI"]
-offset_left = 144.0
-offset_top = 712.0
-offset_right = 432.0
-offset_bottom = 820.0
-text = "Test Button Ignore Screen Click"
+[node name="Btn_Rock" type="Button" parent="UI"]
+offset_left = 364.0
+offset_top = 670.0
+offset_right = 550.0
+offset_bottom = 726.0
+text = "Rock"
+
+[node name="Btn_Gun" type="Button" parent="UI"]
+offset_left = 364.0
+offset_top = 742.0
+offset_right = 550.0
+offset_bottom = 798.0
+text = "Gun"
 
 [connection signal="gui_input" from="GameClick" to="." method="_on_game_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_respawntimer_timeout"]
-[connection signal="gui_input" from="UI/Button" to="." method="_on_button_gui_input"]
+[connection signal="pressed" from="UI/Btn_Rock" to="." method="_on_btn_rock_pressed"]
+[connection signal="pressed" from="UI/Btn_Gun" to="." method="_on_btn_gun_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="data_player" load_steps=3 format=3 uid="uid://23hghugyxhyp"]
+
+[ext_resource type="PackedScene" uid="uid://cei5y8n3tqtvi" path="res://Visuals/PlayerVisuals/visual_player_rock.tscn" id="1_ffxwo"]
+[ext_resource type="Script" path="res://Data/Scripts/data_player.gd" id="2_spa58"]
+
+[resource]
+script = ExtResource("2_spa58")
+display_name = "Rock"
+player_visual = ExtResource("1_ffxwo")
+player_damage = 100.0
+unlocked = true

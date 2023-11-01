@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvhxuld2dd25x"]
+
+[ext_resource type="Texture2D" uid="uid://bumhx2tx4juht" path="res://icon.svg" id="1_wc2mr"]
+
+[node name="visual_player_rock" type="Node2D"]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wc2mr")
+
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(-47, -33)
+rotation = 0.286234
+scale = Vector2(0.660001, 0.1)
+texture = ExtResource("1_wc2mr")

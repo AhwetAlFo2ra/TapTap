@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="data_player" load_steps=3 format=3 uid="uid://lqmbse7p5x7c"]
+
+[ext_resource type="PackedScene" uid="uid://cvhxuld2dd25x" path="res://Visuals/PlayerVisuals/visual_player_gun.tscn" id="1_ovedd"]
+[ext_resource type="Script" path="res://Data/Scripts/data_player.gd" id="2_lo54r"]
+
+[resource]
+script = ExtResource("2_lo54r")
+display_name = "Gun"
+player_visual = ExtResource("1_ovedd")
+player_damage = 500.0
