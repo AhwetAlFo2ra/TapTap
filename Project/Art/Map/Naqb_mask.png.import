@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bg8g75r5jrmny"
+path="res://.godot/imported/Naqb_mask.png-da6dce7b3b8da2edec7f575fa1531561.res"
+
+[deps]
+
+source_file="res://Art/Map/Naqb_mask.png"
+dest_files=["res://.godot/imported/Naqb_mask.png-da6dce7b3b8da2edec7f575fa1531561.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

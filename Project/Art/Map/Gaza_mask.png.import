@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ctwsj14jljvsd"
+path="res://.godot/imported/Gaza_mask.png-cfa78b8e0bd79cfc644926ddbdc06f46.res"
+
+[deps]
+
+source_file="res://Art/Map/Gaza_mask.png"
+dest_files=["res://.godot/imported/Gaza_mask.png-cfa78b8e0bd79cfc644926ddbdc06f46.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

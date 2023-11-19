@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmu7reuo24yts"]
+
+[ext_resource type="Script" path="res://Visuals/Projectiles/projectile.gd" id="1_1ea34"]
+[ext_resource type="Texture2D" uid="uid://bumhx2tx4juht" path="res://icon.svg" id="2_7jafk"]
+
+[sub_resource type="Curve" id="Curve_wp4iu"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6fr7n"]
+_data = [Vector2(0, 0), 0.0, 5.58719, 0, 0, Vector2(1, 0), -3.10464, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03nw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7jafk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Projectile_Rock" type="Node2D"]
+script = ExtResource("1_1ea34")
+time_in_air = 0.8
+movementCurve = SubResource("Curve_wp4iu")
+y_adjustment = SubResource("Curve_6fr7n")
+y_max_height = 300.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_03nw2")

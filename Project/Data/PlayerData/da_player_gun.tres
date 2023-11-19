@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="data_player" load_steps=3 format=3 uid="uid://lqmbse7p5x7c"]
+[gd_resource type="Resource" script_class="data_player" load_steps=4 format=3 uid="uid://lqmbse7p5x7c"]
 
 [ext_resource type="PackedScene" uid="uid://cvhxuld2dd25x" path="res://Visuals/PlayerVisuals/visual_player_gun.tscn" id="1_ovedd"]
+[ext_resource type="PackedScene" uid="uid://cvxuqs1mm3ryj" path="res://Visuals/Projectiles/visual_projectile_rocket.tscn" id="2_657ku"]
 [ext_resource type="Script" path="res://Data/Scripts/data_player.gd" id="2_lo54r"]
 
 [resource]
@@ -8,3 +9,5 @@ script = ExtResource("2_lo54r")
 display_name = "Gun"
 player_visual = ExtResource("1_ovedd")
 player_damage = 500.0
+unlocked = false
+projectile_visual = ExtResource("2_657ku")

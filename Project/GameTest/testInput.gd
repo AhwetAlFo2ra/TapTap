@@ -20,6 +20,7 @@ var max_enemy_in_level: int = 6
 @export var allowed_players_data: data_allowed_players
 var player = null
 var playerDamage = 1000
+var player_projectile :PackedScene = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,29 +30,39 @@ func _ready():
 	_update_label_count_ui()
 
 func _on_game_gui_input(event):
+	
+	if event is InputEventScreenTouch and event.is_pressed() and player_projectile:
+		var projectile_instance = player_projectile.instantiate()
+		add_child(projectile_instance)
+		projectile_instance.start_pos = player.get_global_position()
+		projectile_instance.end_pos = enemy.get_global_position() + Vector2(_get_random_in_range(-40.0,40.0), -randi()%100)
+		projectile_instance.y_max_height += _get_random_in_range(-10.0, 10.0)
+		projectile_instance.tween_complete.connect(_on_hit)
+	
+func _on_hit():
 	if enemyHealth <= 0:
 		return
-	if event is InputEventScreenTouch and event.is_pressed():
-		enemyHealth -= playerDamage
-		progressBar.value = enemyHealth
-		label_enemy_hp.set_text(str(max(enemyHealth,0)))
-		var tween = create_tween().set_parallel(true)
-		
-		tween.tween_property(enemy.get_child(0), "rotation_degrees", (randi() % 40 + -20), 0.05)
-		tween.chain().tween_property(enemy.get_child(0), "rotation_degrees", 0, 0.05)
-		
-		var text_instance = floating_damage_text.instantiate()
-		text_instance.amount = playerDamage
-		add_child(text_instance)
-		var test = enemy.get_child(0).get_scale()
-		text_instance.position = enemy.get_child(0).get_global_position()-Vector2(0,test.y*64)
-		if enemyHealth <= 0:
-			#enemy.visible = false
-			enemy_dead_counter += 1
-			_update_label_count_ui()
-			#progressBar.visible = false
-			timer.start(0.8)
-			tween.tween_property(enemy.get_child(0), "modulate", Color.TRANSPARENT, 0.4)
+	
+	enemyHealth -= playerDamage
+	progressBar.value = enemyHealth
+	label_enemy_hp.set_text(str(max(enemyHealth,0)))
+	var tween = create_tween().set_parallel(true)
+	
+	tween.tween_property(enemy.get_child(0), "rotation_degrees", (randi() % 40 + -20), 0.05)
+	tween.chain().tween_property(enemy.get_child(0), "rotation_degrees", 0, 0.05)
+	
+	var text_instance = floating_damage_text.instantiate()
+	text_instance.amount = playerDamage
+	add_child(text_instance)
+	var test = enemy.get_child(0).get_scale()
+	text_instance.position = enemy.get_child(0).get_global_position()-Vector2(0,test.y*64)
+	if enemyHealth <= 0:
+		#enemy.visible = false
+		enemy_dead_counter += 1
+		_update_label_count_ui()
+		#progressBar.visible = false
+		timer.start(0.8)
+		tween.tween_property(enemy.get_child(0), "modulate", Color.TRANSPARENT, 0.4)
 
 
 func _on_respawntimer_timeout():
@@ -101,6 +112,7 @@ func _get_player():
 	var player_data = allowed_players_data.players[allowed_players_data.current_index]
 	player = player_data.player_visual.instantiate()
 	playerDamage = player_data.player_damage
+	player_projectile = player_data.projectile_visual
 	player_parent.add_child(player)
 
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cl1vphrgegmxp"
+path="res://.godot/imported/Ramla_mask.png-cc005a939d39bb1477a517a2fccad868.res"
+
+[deps]
+
+source_file="res://Art/Map/Ramla_mask.png"
+dest_files=["res://.godot/imported/Ramla_mask.png-cc005a939d39bb1477a517a2fccad868.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
