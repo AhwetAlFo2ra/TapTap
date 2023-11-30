@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var label = $Label
-
 @export var start_pos: Vector2 = Vector2(0,0)
 @export var end_pos: Vector2 = Vector2(0,0)
 @export var time_in_air: float = 1.0
